@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Screens/Home';
 import Soins from './Screens/Soins';
+import CodeRoutier from './Screens/CodeRoutier';
 
 var abacop = require('./Assets/abacop.jpg');
 const Tab = createBottomTabNavigator()
@@ -43,7 +44,7 @@ export default class App extends React.Component {
                 />
               }}
             />
-            <Tab.Screen name="CodeRoutier" component={Soins}
+            <Tab.Screen name="CodeRoutier" component={CodeRoutier}
               options={{
                 tabBarIcon: (props) => <Icon name='warning'
                   color={props.color}
