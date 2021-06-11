@@ -2,17 +2,19 @@ import React from 'react'
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack'
+import Usager from './Usager';
+import Vehicule from './Vehicule';
 const DATA = [
     {
         title: "Usager",
         id: 1,
-        target: null,
+        target: 'Usager',
         icon:'directions-walk'
     },
     {
         title: "Vehicule",
         id: 2,
-        target: null,
+        target: 'Vehicule',
         icon:'commute'
     },
     {
@@ -96,6 +98,9 @@ export default class Home extends React.Component {
         headerMode='none'
         >
             <Stack.Screen name="Index" component={Index} />
+            <Stack.Screen name="Usager" component={Usager} />
+            <Stack.Screen name="Vehicule" component={Vehicule} />
+
         </Stack.Navigator>
     }
 }
