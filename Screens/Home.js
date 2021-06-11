@@ -1,29 +1,38 @@
 import React from 'react'
-import { View, FlatList, TouchableOpacity } from 'react-native';
-import { Card } from 'react-native-elements';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { Card, Icon } from 'react-native-elements';
+import { createStackNavigator } from '@react-navigation/stack'
 const DATA = [
     {
         title: "Usager",
         id: 1,
-        target: null
+        target: null,
+        icon:'directions-walk'
     },
     {
         title: "Vehicule",
         id: 2,
-        target: null
+        target: null,
+        icon:'commute'
     },
     {
         title: "Code de la Route",
         id: 3,
-        target: 'CodeRoutier'
+        target: 'CodeRoutier',
+        icon:'directions'
     },
     {
         title: "Premier soins",
         id: 4,
-        target: 'PremierSoins'
+        target: 'PremierSoins',
+        icon:'local-hospital'
     }
 ]
-export default class Home extends React.Component {
+
+const Stack = createStackNavigator()
+
+
+ class Index extends React.Component {
     constructor(props){
         super(props)
         this._renderItem =this._renderItem.bind(this)
@@ -34,7 +43,8 @@ export default class Home extends React.Component {
             width: '42%',
             height: 100,
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            marginTop:60
         }}
 
         >
@@ -46,12 +56,10 @@ export default class Home extends React.Component {
                  }
              }}
             >
-                <Card.Title
-                    style={{
-                        fontWeight: 'bold',
-                        fontSize: 18
-                    }}
-                >{item.title}</Card.Title>
+                
+                <Icon name={item.icon} size={40}/>
+                <Text>{item.title}</Text>
+                
             </TouchableOpacity>
         </Card>
     );
@@ -62,6 +70,8 @@ export default class Home extends React.Component {
                 style={{
                     flex: 1,
                     alignItems: 'center',
+                    justifyContent:'center',
+                    alignContent:'center'
 
                 }}
             >
@@ -71,10 +81,21 @@ export default class Home extends React.Component {
                     keyExtractor={item => item.id}
                     numColumns={2}
                     style={{
-                        backgroundColor: 'bleu'
+                        flex:1,
                     }}
                 />
             </View>
         );
+    }
+}
+
+
+export default class Home extends React.Component {
+    render(){
+        return<Stack.Navigator
+        headerMode='none'
+        >
+            <Stack.Screen name="Index" component={Index} />
+        </Stack.Navigator>
     }
 }
