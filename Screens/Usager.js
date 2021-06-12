@@ -12,7 +12,7 @@ const usagers = [
         diabete: 'O/N',
         antecedant: 'aucun',
         allergie: "aucune",
-        medecint: 'Yamingue kingatal yamking01@gmail.com 63579240',
+        medecint: 'Yamingue kingatal 63579240',
         contacturgent: '63579240'
     }
 ]
