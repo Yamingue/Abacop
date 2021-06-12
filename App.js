@@ -25,7 +25,7 @@ export default class App extends React.Component {
         }} />
         <NavigationContainer>
           <Tab.Navigator
-          initialRouteName="Acceuille"
+          initialRouteName="Acceuil"
           >
            
             <Tab.Screen name="PremierSoins" component={Soins}
@@ -37,7 +37,7 @@ export default class App extends React.Component {
               }}
 
             />
-             <Tab.Screen name="Acceuille" component={Home}
+             <Tab.Screen name="Acceuil" component={Home}
               options={{
                 tabBarIcon: (props) => <Icon name={'home'}
                   color={props.color}
