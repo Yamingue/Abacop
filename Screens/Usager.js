@@ -26,16 +26,19 @@ class UsagerCard extends React.Component {
             <View>
                 <Card>
                     <Card.Title h3>Infromation personelle</Card.Title>
-                    <Text>Nom complet: {this.props.usager.nom}</Text>
-                    <Text>NNi : {this.props.usager.nni}</Text>
-                    <Text>PERMIS DE CONDUIRE: </Text>
-                    <Card.Image source={require('../Assets/permis.jpg')} />
+                    <Card.Title>Nom et Prenom: {this.props.usager.nom}</Card.Title>
+                    <Card.Title>Téléphone: {this.props.usager.tel} </Card.Title>
+                    <Card.Title>NNi : {this.props.usager.nni}</Card.Title>
+                    <Card.Title>PERMIS DE CONDUIRE: </Card.Title>
+                    <Card.Image source={this.props.usager.permis} />
                     <Card.Divider />
-                    <Card.Title h3>Infromation Medicals :</Card.Title>
-                    <Text>ANTECEDENTS CHIRURGICAUX: {this.props.usager.antecedant}</Text>
-                    <Text>ALLERGIES MEDICALES: {this.props.usager.allergie} </Text>
-                    <Text>MEDECIN SOIGNANT: {this.props.usager.medecint}</Text>
-                    <Text>PERSONNE A CONTACTER EN CAS D’URGENCE: {this.props.usager.contacturgent}</Text>
+                    <Card.Title>GROUPE SANGUIN: {this.props.usager.gs}</Card.Title>
+                    <Card.Title>ANTECEDENTS CHIRURGICAUX: {this.props.usager.antecedant}</Card.Title>
+                    <Card.Title>ALLERGIES MEDICALES: {this.props.usager.allergie} </Card.Title>
+                    <Card.Title>DIABETIQUE: {this.props.usager.diabete}</Card.Title>
+                    <Card.Title>GROUPE SANGUIN: {this.props.usager.gs}</Card.Title>
+                    <Card.Title>MEDECIN SOIGNANT: {this.props.usager.medecint}</Card.Title>
+                    <Card.Title>PERSONNE A CONTACTER EN CAS D’URGENCE: {this.props.usager.contacturgent}</Card.Title>
                 </Card>
             </View>
         );
@@ -48,7 +51,7 @@ export default class Usager extends React.Component {
         this.state = {
             isLoad: false,
             usager: null,
-            text:'',
+            text: '',
         }
         this.chercheUsager = this.chercheUsager.bind(this)
     }
@@ -81,10 +84,10 @@ export default class Usager extends React.Component {
                     inputContainerStyle={{
                         backgroundColor: '#fff',
                     }}
-                    placeholder={'Rechercher'}
+                    placeholder={'Rechercher usager'}
                     value={this.state.text}
-                    onChangeText={text=>this.setState({text})}
-                    onSubmitEditing={text=>this.chercheUsager(text)}
+                    onChangeText={text => this.setState({ text })}
+                    onSubmitEditing={text => this.chercheUsager(text)}
 
                 />
                 {
