@@ -25,14 +25,14 @@ class UsagerCard extends React.Component {
         return (
             <View>
                 <Card>
-                    <Card.Title h3>Information personelles</Card.Title>
+                    <Card.Title h3>Informations personelles</Card.Title>
                     <Card.Title>Nom et Prenom: {this.props.usager.nom}</Card.Title>
                     <Card.Title>Téléphone: {this.props.usager.tel} </Card.Title>
                     <Card.Title>NNi : {this.props.usager.nni}</Card.Title>
                     <Card.Title>PERMIS DE CONDUIRE: </Card.Title>
                     <Card.Image source={this.props.usager.permis} />
                     <Card.Divider />
-                    <Card.Title h3>Information Medicales</Card.Title>
+                    <Card.Title h3>Informations Medicales</Card.Title>
                     <Card.Title>GROUPE SANGUIN: {this.props.usager.gs}</Card.Title>
                     <Card.Title>ANTECEDENTS CHIRURGICAUX: {this.props.usager.antecedant}</Card.Title>
                     <Card.Title>ALLERGIES MEDICALES: {this.props.usager.allergie} </Card.Title>
