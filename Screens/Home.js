@@ -18,7 +18,7 @@ const DATA = [
         icon:'commute'
     },
     {
-        title: "Code de la Route",
+        title: "Codes de la Route",
         id: 3,
         target: 'CodeRoutier',
         icon:'directions'
