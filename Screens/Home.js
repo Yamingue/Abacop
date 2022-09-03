@@ -24,7 +24,7 @@ const DATA = [
         icon:'directions'
     },
     {
-        title: "Premier soins",
+        title: "Premiers soins",
         id: 4,
         target: 'PremierSoins',
         icon:'local-hospital'
