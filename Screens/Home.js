@@ -4,30 +4,42 @@ import { Card, Icon } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack'
 import Usager from './Usager';
 import Vehicule from './Vehicule';
+import Urgence from './Urgence';
 const DATA = [
     {
         title: "Usager",
         id: 1,
         target: 'Usager',
-        icon:'directions-walk'
+        icon:'directions-walk',
+        iconColor:'#8fa22e'
     },
     {
         title: "Vehicule",
         id: 2,
         target: 'Vehicule',
-        icon:'commute'
+        icon:'commute',
+        iconColor:'#000'
     },
     {
-        title: "Codes de la Route",
+        title: "Circulation routière",
         id: 3,
         target: 'CodeRoutier',
-        icon:'directions'
+        icon:'directions',
+        iconColor:'#2e4ba2'
     },
     {
         title: "Premiers soins",
         id: 4,
         target: 'PremierSoins',
-        icon:'local-hospital'
+        icon:'local-hospital',
+        iconColor:'green'
+    },
+    {
+        title: "Urgences",
+        id: 5,
+        target: 'Urgences',
+        icon:'local-hospital',
+        iconColor:'red'
     }
 ]
 
@@ -46,7 +58,8 @@ const Stack = createStackNavigator()
             height: 100,
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop:60
+            marginTop:20,
+            borderRadius:15
         }}
 
         >
@@ -59,7 +72,7 @@ const Stack = createStackNavigator()
              }}
             >
                 
-                <Icon name={item.icon} size={40}/>
+                <Icon name={item.icon} size={40} color={item.iconColor}/>
                 <Text>{item.title}</Text>
                 
             </TouchableOpacity>
@@ -100,6 +113,7 @@ export default class Home extends React.Component {
             <Stack.Screen name="Index" component={Index} />
             <Stack.Screen name="Usager" component={Usager} />
             <Stack.Screen name="Vehicule" component={Vehicule} />
+            <Stack.Screen name="Urgences" component={Urgence} />
 
         </Stack.Navigator>
     }
